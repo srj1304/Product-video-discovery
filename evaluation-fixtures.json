@@ -1,0 +1,7 @@
+[
+  {"name":"Nike Air Max 270 Black","brand":"Nike","product_family":"Air Max","model":"Air Max 270","target_granularity":"VARIANT","explicit_constraints":{"color":"black"},"category":"footwear"},
+  {"name":"Samsung Galaxy S25 256GB Black","brand":"Samsung","product_family":"Galaxy","model":"Galaxy S25","target_granularity":"VARIANT","explicit_constraints":{"storage":"256GB","color":"black"},"category":"electronics"},
+  {"name":"Apple iPhone 16 Pro Natural Titanium","brand":"Apple","product_family":"iPhone","model":"iPhone 16 Pro","target_granularity":"VARIANT","explicit_constraints":{"color":"natural titanium"},"category":"electronics"},
+  {"name":"Dark Chocolate Protein Bar","brand":null,"product_family":null,"model":null,"target_granularity":"FAMILY","explicit_constraints":{"flavor":"dark chocolate"},"category":"fmcg"},
+  {"name":"Oversized Graphic Tee Black","brand":null,"product_family":"graphic tee","model":null,"target_granularity":"VARIANT","explicit_constraints":{"color":"black"},"category":"fashion"}
+]

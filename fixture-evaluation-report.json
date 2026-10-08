@@ -1,0 +1,47 @@
+[
+  {
+    "product": "Nike Air Max 270 Black",
+    "candidates": 60,
+    "hard_gate_passed": 60,
+    "expected_exact_candidates": 42,
+    "sample_bad_matches": 3,
+    "top_retrieval_score": 95,
+    "note": "Deterministic fixture-mode evidence; live-source accuracy must be evaluated separately."
+  },
+  {
+    "product": "Samsung Galaxy S25 256GB Black",
+    "candidates": 60,
+    "hard_gate_passed": 60,
+    "expected_exact_candidates": 42,
+    "sample_bad_matches": 3,
+    "top_retrieval_score": 95,
+    "note": "Deterministic fixture-mode evidence; live-source accuracy must be evaluated separately."
+  },
+  {
+    "product": "Apple iPhone 16 Pro Natural Titanium",
+    "candidates": 60,
+    "hard_gate_passed": 60,
+    "expected_exact_candidates": 42,
+    "sample_bad_matches": 3,
+    "top_retrieval_score": 95,
+    "note": "Deterministic fixture-mode evidence; live-source accuracy must be evaluated separately."
+  },
+  {
+    "product": "Dark Chocolate Protein Bar",
+    "candidates": 60,
+    "hard_gate_passed": 60,
+    "expected_exact_candidates": 42,
+    "sample_bad_matches": 3,
+    "top_retrieval_score": 94,
+    "note": "Deterministic fixture-mode evidence; live-source accuracy must be evaluated separately."
+  },
+  {
+    "product": "Oversized Graphic Tee Black",
+    "candidates": 60,
+    "hard_gate_passed": 60,
+    "expected_exact_candidates": 42,
+    "sample_bad_matches": 3,
+    "top_retrieval_score": 94,
+    "note": "Deterministic fixture-mode evidence; live-source accuracy must be evaluated separately."
+  }
+]
