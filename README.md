@@ -255,9 +255,6 @@ The backend uses Node 22's built-in `node:sqlite` for the MVP.
 
 `tests/evaluation-fixtures.json` contains five products spanning footwear, electronics, FMCG and fashion. `scripts/run-fixture-evaluation.mjs` generates `tests/fixture-evaluation-report.json`. These are deterministic fixture-mode results and are explicitly not presented as live platform accuracy evidence.
 
-## Submission notes
-
-The original assignment asks for: source code with commit history, README, 3–5 minute demo, evidence on at least five products, optional deployment, and no real API keys or personal credentials in the submission. A live source smoke test and final five-product evaluation should be completed immediately before submission because public platform pages/selectors can change.
 
 ## Engineering note
 The older prototype and the hardened pass were consolidated into this final working tree. The consolidated version includes persistent job execution with stale-job recovery, adaptive source loops with per-query retries, perceptual hashing, cached visual decisions, thumbnail-first/frame escalation, user-scoped history, conflict UX with durable re-queueing, bounded runtime configuration, visual-keyword query expansion, result platform/score/newest controls, and reproducible fixture validation. The live browser collectors remain best-effort adapters because platform pages/selectors can change or block automation; the source mode reports shortfalls instead of fabricating results.
