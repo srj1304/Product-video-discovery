@@ -28,6 +28,15 @@ The assignment allows PostgreSQL, MongoDB, Redis and SQLite. SQLite is used for 
 
 The AI layer is provider-abstracted. Gemini is the primary multimodal implementation when a key is configured; the system falls back to deterministic fixture/uncertain behaviour rather than silently fabricating visual matches when no provider is available. The model performs evidence extraction; backend rules calculate final decisions.
 
+## API keys and live-source credentials
+
+The project uses two separate credential paths:
+
+- `GEMINI_API_KEY` enables product-intent normalization and optional visual verification. It is read only by the backend and can be left empty for the deterministic no-key path.
+- A Meta Ad Library API token would be used by a future authorized Graph API collector. The current Playwright browser collector does not consume a Meta token; it accesses public pages and can receive HTTP 403 from Meta.
+
+See [API_KEYS_AND_LIVE_SOURCES.md](./API_KEYS_AND_LIVE_SOURCES.md) for setup, security, free/no-key operation, API limitations, request flow and troubleshooting. Never commit `.env` or place either credential in frontend code.
+
 ## Matching strategy
 
 1. Product intent extraction with specificity preservation.
@@ -47,6 +56,8 @@ Unspecified product attributes remain unknown. URL/listing/image-derived informa
 - Instagram: public web discovery of Reel URLs plus best-effort page metadata/thumbnail/media extraction.
 - Meta: public Ad Library video-filtered search plus best-effort ad-page metadata/thumbnail/media extraction.
 
+Browser mode can use an installed Chrome/Edge executable through `BROWSER_EXECUTABLE_PATH`. If Google, Meta, or the network blocks automation, the system reports a source shortfall and does not convert blocked pages into candidates.
+
 The collectors are isolated behind interfaces so source changes do not affect ranking, deduplication, AI or UI logic. Each source is queried progressively until it reaches the configured target, exhausts the allowed query/candidate/runtime budget, or reports a shortfall.
 
 ## Caching and deduplication
@@ -64,6 +75,8 @@ The collectors are isolated behind interfaces so source changes do not affect ra
 2. Run `npm test`.
 3. Run `npm start`.
 4. For the React UI, install frontend dependencies and run `npm run dev` inside `frontend/`.
+
+The complete request path is: input -> product intent -> canonical validation -> compact query plan -> source collectors -> hard-constraint gate -> relevance/visual scoring -> deduplication -> persisted results -> SSE progress events -> React dashboard. Gemini only supplies structured evidence; it does not directly search sources or override backend validation.
 
 The backend uses Node 22's built-in `node:sqlite` for the MVP.
 
